@@ -1,0 +1,59 @@
+.bidder-home {
+    min-height: calc(100vh - 60px);
+}
+
+.welcome-banner {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #1a237e 100%);
+    color: white;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+}
+
+.welcome-banner h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.bids-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1rem 0 2rem;
+}
+
+.bid-summary-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.action-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.action-card:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .welcome-banner {
+        padding: 2rem 0;
+    }
+
+    .welcome-banner h1 {
+        font-size: 2rem;
+    }
+}

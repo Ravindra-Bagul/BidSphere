@@ -1,0 +1,84 @@
+.auction-result-page {
+    padding: 2rem 0;
+}
+
+.result-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.auction-summary {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.auction-summary h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.winning-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.winning-info p {
+    margin: 0;
+    color: #666;
+}
+
+.bid-history h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.bid-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.bid-table th,
+.bid-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.bid-table th {
+    font-weight: 600;
+    color: #666;
+}
+
+.winning-bid {
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.badge.winner {
+    background-color: #4caf50;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .bid-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .winning-info {
+        grid-template-columns: 1fr;
+    }
+}

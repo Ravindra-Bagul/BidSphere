@@ -1,0 +1,66 @@
+.profile-page {
+    padding: 2rem;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-type-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-blue);
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.profile-info {
+    margin-top: 1.5rem;
+}
+
+.info-row {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.info-row .label {
+    width: 120px;
+    font-weight: 600;
+    color: #666;
+}
+
+.info-row .value {
+    flex: 1;
+}
+
+.edit-button {
+    margin-top: 1.5rem;
+}
+
+.profile-form {
+    margin-top: 1.5rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 576px) {
+    .info-row {
+        flex-direction: column;
+    }
+
+    .info-row .label {
+        margin-bottom: 0.25rem;
+    }
+}
