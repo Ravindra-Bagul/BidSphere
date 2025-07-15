@@ -1,17 +1,25 @@
-# Use official JDK 17 image
-FROM eclipse-temurin:17-jdk-alpine
+# Use Maven with JDK 17 to build the app
+FROM maven:3.9.6-eclipse-temurin-17 as build
 
 # Set working directory
 WORKDIR /app
 
-# Copy Maven wrapper and project files
+# Copy source code
 COPY . .
 
-# Build the application
-RUN ./mvnw clean package -DskipTests
+# Build using system Maven
+RUN mvn clean package -DskipTests
 
-# Expose the default Spring Boot port
+# Use JDK 17 runtime for smaller final image
+FROM eclipse-temurin:17-jdk-alpine
+
+WORKDIR /app
+
+# Copy jar from build stage
+COPY --from=build /app/target/auction-backend-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose port
 EXPOSE 8080
 
-# Run the JAR file
-CMD ["java", "-jar", "target/auction-backend-0.0.1-SNAPSHOT.jar"]
+# Run the app
+CMD ["java", "-jar", "app.jar"]
